@@ -21,6 +21,7 @@ import AvailableUnitsSection from '@/components/AvailableUnitsSection';
 import GoogleReview from '@/components/GoogleReview';
 import Footer from '@/components/Footer';
 import ContactChoiceModal from '@/components/ContactChoiceModal';
+import IntroVideoModal from '@/components/IntroVideoModal';
 import { WA_MESSAGES } from '@/lib/contact';
 
 const structuredData = [
@@ -184,7 +185,7 @@ const structuredData = [
         "name": "Do I need riding experience to ride at What A Rush?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No prior experience is needed. We have horses suited for all levels. Paco (Peruvian Horse) and Congrejeto (Friesian) are gentle and ideal for beginners, while Tequilla (Spanish gaited) is best for experienced riders. All necessary tack and equipment is provided."
+          "text": "No prior experience is needed. We have horses suited for all levels. Sir Dante (Black Beauty gelding), Paco (Peruvian Horse) and Congrejeto (Friesian) are gentle and well mannered for beginners and advanced riders alike, while Tequilla (Spanish gaited) is best for experienced riders. All necessary tack and equipment is provided."
         }
       },
       {
@@ -292,6 +293,8 @@ function App() {
         <Footer />
         <Toaster />
       </div>
+
+      <IntroVideoModal />
     </>
   );
 }

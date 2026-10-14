@@ -25,6 +25,20 @@
 #   ffmpeg -y -ss 2 -i public/images/gallery/videos/beachride.mp4 -frames:v 1 \
 #     -vf scale=720:1280 -c:v libwebp -quality 82 \
 #     public/images/gallery/videos/posters/beachride.webp
+#
+# sirdante-reel is also skipped: it is the Instagram intro/gallery reel, already
+# a 720x1280 portrait source. Re-encoded to ~6 MB so it is light enough to
+# autoplay in the full-screen intro on every visit. Regenerate with:
+#   ffmpeg -y -i media-src/gallery-videos/sirdante-reel.mp4 -vf scale=-2:1280:flags=lanczos \
+#     -c:v libx264 -b:v 1250k -preset slower -profile:v high -level 4.0 -pix_fmt yuv420p \
+#     -an -pass 1 -passlogfile /tmp/sd -f mp4 /dev/null && \
+#   ffmpeg -y -i media-src/gallery-videos/sirdante-reel.mp4 -vf scale=-2:1280:flags=lanczos \
+#     -c:v libx264 -b:v 1250k -preset slower -profile:v high -level 4.0 -pix_fmt yuv420p \
+#     -c:a aac -b:a 96k -ac 2 -movflags +faststart -pass 2 -passlogfile /tmp/sd \
+#     public/images/gallery/videos/sirdante-reel.mp4 && \
+#   ffmpeg -y -ss 1 -i public/images/gallery/videos/sirdante-reel.mp4 -frames:v 1 \
+#     -vf scale=720:1280 -c:v libwebp -quality 78 \
+#     public/images/gallery/videos/posters/sirdante-reel.webp
 set -euo pipefail
 
 SRC_DIR="media-src/gallery-videos"
@@ -36,7 +50,11 @@ mkdir -p "$OUT_DIR" "$POSTER_DIR"
 # Long clips get a slightly higher CRF (smaller files, quality still fine).
 HIGH_CRF="video2 shakey-video1"
 # Clips with a bespoke encode that this generic pass must not overwrite.
-SKIP_REENCODE="beachride"
+# (both are 720x1280 portrait — the generic height-720 cap would halve their width)
+SKIP_REENCODE="beachride sirdante-reel"
+# Cloudflare (Pages and Workers Static Assets) rejects any single asset over
+# 25 MiB, which would silently fail the deploy. Hard-fail here instead.
+MAX_BYTES=26214400  # 25 MiB
 SCALE="scale=-2:'min(720,ih)':flags=lanczos"
 
 shopt -s nullglob
@@ -78,6 +96,10 @@ for src in "$SRC_DIR"/*; do
     -vf "$SCALE" -c:v libwebp -quality 70 "$POSTER_DIR/$name.webp"
 
   s=$(stat -c%s "$src"); o=$(stat -c%s "$out")
+  if [ "$o" -gt "$MAX_BYTES" ]; then
+    echo "ERROR: $name.mp4 is $o bytes, over the 25 MiB Cloudflare per-file limit ($MAX_BYTES). Lower the bitrate or split the clip." >&2
+    exit 1
+  fi
   total_src=$((total_src + s)); total_out=$((total_out + o))
   printf '%-18s (%-6s): %9d -> %9d bytes\n' "$name" "$how" "$s" "$o"
 done
