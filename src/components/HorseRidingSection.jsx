@@ -6,6 +6,13 @@ import ResponsiveImage from '@/components/ResponsiveImage';
 
 const horses = [
   {
+    name: 'Sir Dante',
+    images: [
+      '/images/horses/sirdante.jpeg',
+    ],
+    story: 'Regal in appearance and a presence that says "Look at Me!" He is a real head turner that moves like fluid grace. Level headed, calm, collected and responsive with a willing attitude to serve. This well mannered Black Beauty gelding is very intuitive to his rider. He is certain to appeal to beginners as well as advanced equine riders. He makes all of his riders look amazing.'
+  },
+  {
     name: 'Paco',
     images: [
       '/images/horses/paco.jpeg',
@@ -140,7 +147,7 @@ const HorseRidingSection = () => {
         </motion.div>
 
         {/* Original Grid - always visible */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {horses.map((horse, index) => (
             <HorseCard
               key={horse.name}

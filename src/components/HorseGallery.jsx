@@ -33,6 +33,7 @@ const p = galleryPhotos;
 // Raw list only — no build at module scope so no Math.random runs at import.
 // The gallery renders a deterministic order first, then reshuffles after mount.
 const photoItems = [
+  { src: `${p}/sirdante.jpeg`, alt: 'Sir Dante the black gelding at What A Rush Riding Stables' },
   { src: `${p}/Tiqandpeople.jpeg`, alt: 'Tequilla with people at What A Rush Riding Stables' },
   { src: `${p}/Carbonero.jpeg`, alt: 'Carbonero the horse at What A Rush Riding Stables' },
   { src: `${p}/Congrejeto1.jpeg`, alt: 'Congrejeto the Friesian horse' },
