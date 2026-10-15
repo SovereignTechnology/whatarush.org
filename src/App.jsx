@@ -142,9 +142,9 @@ const structuredData = [
   {
     "@context": "https://schema.org",
     "@type": "LodgingBusiness",
-    "@id": "https://whatarush.org/#house-of-grace",
-    "name": "House of Grace - Beachfront Palapa Rental",
-    "description": "Beachfront palapa rental in La Libertad, El Salvador. Fully furnished 1-bedroom with Starlink internet, pool, and beach views. Nightly, weekly, monthly, and yearly rates available.",
+    "@id": "https://whatarush.org/#cowboy-casita",
+    "name": "The Cowboy Casita - Beachfront Casita Rental",
+    "description": "Beachfront casita rental in La Libertad, El Salvador. Fully furnished and American standard, sleeping up to 5 guests, with private parking, internet, AC, pool, and direct beach access. $180/night or $1,000/month on a 1-year lease.",
     "url": "https://whatarush.org/#available-units",
     "telephone": "+50369866030",
     "address": {
@@ -153,20 +153,21 @@ const structuredData = [
       "addressRegion": "La Libertad",
       "addressCountry": "SV"
     },
-    "image": "https://whatarush.org/images/property/main%20photo.jpeg",
-    "priceRange": "$250-$3700 USD",
+    "image": "https://whatarush.org/images/property/casita-main.jpeg",
+    "priceRange": "$180-$1000 USD",
     "currenciesAccepted": "USD",
     "paymentAccepted": "Cash, Bitcoin",
-    "numberOfRooms": 1,
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Beachfront", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Starlink Internet", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Direct Beach Access", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Pool", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Air Conditioning", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Internet", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Private Parking", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Fully Furnished", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "American Standard Fixtures", "value": true }
-    ],
-    "checkinTime": "15:00",
-    "checkoutTime": "11:00"
+      { "@type": "LocationFeatureSpecification", "name": "American Standard Fixtures", "value": true },
+      { "@type": "LocationFeatureSpecification", "name": "Sleeps up to 5", "value": true }
+    ]
   },
   {
     "@context": "https://schema.org",
@@ -198,7 +199,7 @@ const structuredData = [
       },
       {
         "@type": "Question",
-        "name": "How do I book a ride or the palapa rental?",
+        "name": "How do I book a ride or the casita rental?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Contact Shawn Burke via WhatsApp at +503 6986 6030. You can also message directly through the website's WhatsApp booking link."
@@ -206,10 +207,10 @@ const structuredData = [
       },
       {
         "@type": "Question",
-        "name": "What is the House of Grace palapa rental?",
+        "name": "What is The Cowboy Casita?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "House of Grace is a fully furnished beachfront palapa with 1 bedroom, 1 bathroom, Starlink internet, and pool access in La Libertad, El Salvador. Rates: $250/night, $1,500/week, $3,700/month, or $1,500/month on a yearly lease. We accept cash and Bitcoin."
+          "text": "The Cowboy Casita is a fully furnished, American standard beachfront casita in La Libertad, El Salvador that sleeps up to 5 guests. It includes private parking, internet, AC, pool access, and direct access to the beach. Rates: $180/night, or $1,000/month on a 1-year lease. We accept cash and Bitcoin."
         }
       },
       {
@@ -217,7 +218,7 @@ const structuredData = [
         "name": "Does What A Rush accept Bitcoin?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, What A Rush accepts both cash and Bitcoin as payment for horseback riding services and the palapa rental."
+          "text": "Yes, What A Rush accepts both cash and Bitcoin as payment for horseback riding services and The Cowboy Casita."
         }
       }
     ]
@@ -258,10 +259,10 @@ function App() {
   return (
     <>
       <Head>
-        <title>What A Rush - Beachfront Horseback Riding, Trail Rides & Palapa Rental | La Libertad, El Salvador</title>
+        <title>What A Rush - Beachfront Horseback Riding, Trail Rides & The Cowboy Casita | La Libertad, El Salvador</title>
         <meta
           name="description"
-          content="Experience beachfront horseback riding, guided trail rides, horsemanship lessons, and beachfront palapa rental at What A Rush in La Libertad, El Salvador."
+          content="Experience beachfront horseback riding, guided trail rides, horsemanship lessons, and the beachfront Cowboy Casita rental at What A Rush in La Libertad, El Salvador."
         />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Head>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Bed, Bath, MapPin, DollarSign, Wifi, Zap, Home, Bitcoin, Banknote } from 'lucide-react';
+import { Users, Car, Snowflake, Waves, Umbrella, MapPin, DollarSign, Wifi, Zap, Home, Bitcoin, Banknote } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import ContactChoiceModal from '@/components/ContactChoiceModal';
 import { WA_MESSAGES } from '@/lib/contact';
@@ -9,19 +9,18 @@ const RentalUnitCard = () => {
   const [contactOpen, setContactOpen] = useState(false);
 
   const features = [
-    { icon: Bed, text: '1 Bedroom', color: 'text-blue-600' },
-    { icon: Bath, text: '1 Bathroom', color: 'text-cyan-600' },
-    { icon: MapPin, text: 'Beachfront - La Libertad', color: 'text-teal-600' },
+    { icon: Users, text: 'Sleeps up to 5 guests', color: 'text-blue-600' },
     { icon: Home, text: 'Fully Furnished', color: 'text-amber-600' },
     { icon: DollarSign, text: 'American Standard', color: 'text-green-600' },
-    { icon: Wifi, text: 'Starlink Internet Included', color: 'text-indigo-600' },
-    { icon: Zap, text: 'Utilities Included for Short-Term Stays', color: 'text-yellow-600', note: 'short' },
+    { icon: Car, text: 'Private Parking', color: 'text-slate-600' },
+    { icon: Wifi, text: 'Internet Included', color: 'text-indigo-600' },
+    { icon: Snowflake, text: 'Air Conditioning (AC)', color: 'text-cyan-600' },
+    { icon: Waves, text: 'Pool', color: 'text-teal-600' },
+    { icon: Umbrella, text: 'Direct Beach Access', color: 'text-orange-600' },
   ];
 
   const pricing = [
-    { label: 'By the night', price: '$250.00 USD' },
-    { label: 'By the week', price: '$1,500.00 USD' },
-    { label: 'By the month', price: '$3,700.00 USD' },
+    { label: 'By the night', price: '$180.00 USD' },
   ];
 
   const paymentMethods = [
@@ -39,9 +38,9 @@ const RentalUnitCard = () => {
     >
       <div className="mb-6">
         <h3 className="text-3xl font-bold text-gray-800 mb-2">
-          Palapa Rental
+          The Cowboy Casita
         </h3>
-        <p className="text-gray-600">Your perfect beachfront retreat awaits</p>
+        <p className="text-gray-600">Your perfect beachfront casita awaits</p>
       </div>
 
       {/* Short Term Pricing */}
@@ -66,7 +65,7 @@ const RentalUnitCard = () => {
           <div className="flex justify-between items-baseline">
             <span className="text-gray-600">1 Year Lease</span>
             <span className="text-lg font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">
-              $1,500.00 USD / month
+              $1,000.00 USD / month
             </span>
           </div>
         </div>
@@ -107,7 +106,7 @@ const RentalUnitCard = () => {
         <div className="flex items-start gap-2">
           <Zap className="w-4 h-4 text-amber-600 mt-0.5 flex-shrink-0" />
           <p className="text-sm text-gray-600">
-            <span className="font-semibold text-gray-700">Short-term stays</span> — electricity included in nightly &amp; weekly rates.
+            <span className="font-semibold text-gray-700">Short-term stays</span> — electricity included in the nightly rate.
             <br />
             <span className="font-semibold text-gray-700">Long-term lease</span> — electricity billed separately based on usage.
           </p>
@@ -129,7 +128,7 @@ const RentalUnitCard = () => {
       <ContactChoiceModal
         open={contactOpen}
         onOpenChange={setContactOpen}
-        whatsappMessage={WA_MESSAGES.palapa}
+        whatsappMessage={WA_MESSAGES.casita}
       />
     </motion.div>
   );
