@@ -5,32 +5,14 @@ import ResponsiveImage from '@/components/ResponsiveImage';
 import { srcSet } from '@/lib/utils';
 
 const images = [
-  { src: '/images/property/main photo.jpeg', label: 'Main Photo' },
-  { src: '/images/property/Kitchen and living room area1.jpeg', label: 'Kitchen & Living Room' },
-  { src: '/images/property/Kitchen and living room area2.jpeg', label: 'Kitchen & Living Room' },
-  { src: '/images/property/Kitchen and living room area3.jpeg', label: 'Kitchen & Living Room' },
-  { src: '/images/property/Kitchen and living room area4.jpeg', label: 'Kitchen & Living Room' },
-  { src: '/images/property/Kitchen and living room area5.jpeg', label: 'Kitchen & Living Room' },
-  { src: '/images/property/bedroom.jpeg', label: 'Bedroom' },
-  { src: '/images/property/bedroom lounge area1.jpeg', label: 'Bedroom Lounge Area' },
-  { src: '/images/property/bedroom lounge area2.jpeg', label: 'Bedroom Lounge Area' },
-  { src: '/images/property/bedroom lounge area3.jpeg', label: 'Bedroom Lounge Area' },
-  { src: '/images/property/bedroom lounge area4.jpeg', label: 'Bedroom Lounge Area' },
-  { src: '/images/property/bedroom lounge area5.jpeg', label: 'Bedroom Lounge Area' },
-  { src: '/images/property/beedroom beach view.jpeg', label: 'Bedroom Beach View' },
-  { src: '/images/property/stairs to bedroom.jpeg', label: 'Stairs to Bedroom' },
-  { src: '/images/property/bathroom1.jpeg', label: 'Bathroom' },
-  { src: '/images/property/bathroom2.jpeg', label: 'Bathroom' },
-  { src: '/images/property/pool.jpeg', label: 'Pool' },
-  { src: '/images/property/1beach view.jpeg', label: 'Beach View' },
-  { src: '/images/property/2beach view.jpeg', label: 'Beach View' },
-  { src: '/images/property/3beach view.jpeg', label: 'Beach View' },
-  { src: '/images/property/4beach view.jpeg', label: 'Beach View' },
-  { src: '/images/property/5beach view.jpeg', label: 'Beach View' },
-  { src: '/images/property/outside view1.jpeg', label: 'Outside View' },
-  { src: '/images/property/outside view2.jpeg', label: 'Outside View' },
-  { src: '/images/property/outside view3.jpeg', label: 'Outside View' },
-  { src: '/images/property/outside view4.jpeg', label: 'Outside View' },
+  { src: '/images/property/casita-main.jpeg', label: 'Exterior & Patio' },
+  { src: '/images/property/casita-pool-beach.jpeg', label: 'Pool & Beach' },
+  { src: '/images/property/casita-exterior.jpeg', label: 'Exterior' },
+  { src: '/images/property/casita-kitchen.jpeg', label: 'Kitchen & Bar' },
+  { src: '/images/property/casita-bedroom.jpeg', label: 'Bedroom' },
+  { src: '/images/property/casita-bedroom-vanity.jpeg', label: 'Bedroom & Vanity' },
+  { src: '/images/property/casita-bedroom-ensuite.jpeg', label: 'Bedroom & Ensuite' },
+  { src: '/images/property/casita-bathroom.jpeg', label: 'Bathroom' },
 ];
 
 const PropertyGallery = () => {
@@ -63,7 +45,7 @@ const PropertyGallery = () => {
               <div className="aspect-square overflow-hidden">
                 <ResponsiveImage
                   src={image.src}
-                  alt={`${image.label} at House of Grace beachfront property`}
+                  alt={`${image.label} at The Cowboy Casita beachfront property`}
                   sizes="(max-width: 768px) 50vw, 33vw"
                   loading="lazy"
                   className={`w-full h-full object-cover transition-transform duration-500 ${

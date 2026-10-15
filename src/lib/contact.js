@@ -10,7 +10,7 @@ export const WHATSAPP_NUMBER = '50369866030';
 export const WA_MESSAGES = {
 	general: "Hi, I saw your website and I'm interested",
 	services: "Hi, I saw your website and I'm interested in your services",
-	palapa: "Hi, I saw your website and I'm interested in the Palapa Rental",
+	casita: "Hi, I saw your website and I'm interested in The Cowboy Casita",
 };
 
 export const whatsappUrl = (message = WA_MESSAGES.general) =>
