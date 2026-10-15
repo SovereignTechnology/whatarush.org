@@ -7,6 +7,8 @@ import { srcSet } from '@/lib/utils';
 const images = [
   { src: '/images/property/casita-main.jpeg', label: 'Exterior & Patio' },
   { src: '/images/property/casita-pool-beach.jpeg', label: 'Pool & Beach' },
+  { src: '/images/property/casita-pool-lawn.jpeg', label: 'Pool & Grounds' },
+  { src: '/images/property/casita-beach-umbrella.jpeg', label: 'Beach' },
   { src: '/images/property/casita-exterior.jpeg', label: 'Exterior' },
   { src: '/images/property/casita-kitchen.jpeg', label: 'Kitchen & Bar' },
   { src: '/images/property/casita-bedroom.jpeg', label: 'Bedroom' },
