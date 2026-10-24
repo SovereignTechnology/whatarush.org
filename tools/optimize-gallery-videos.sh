@@ -26,19 +26,19 @@
 #     -vf scale=720:1280 -c:v libwebp -quality 82 \
 #     public/images/gallery/videos/posters/beachride.webp
 #
-# sirdante-reel is also skipped: it is the Instagram intro/gallery reel, already
-# a 720x1280 portrait source. Re-encoded to ~6 MB so it is light enough to
-# autoplay in the full-screen intro on every visit. Regenerate with:
-#   ffmpeg -y -i media-src/gallery-videos/sirdante-reel.mp4 -vf scale=-2:1280:flags=lanczos \
+# reel is also skipped: it is the section/gallery reel, already a 720x1280
+# portrait source. Re-encoded to ~6 MB so it stays light enough to load on
+# demand from its own page section. Regenerate with:
+#   ffmpeg -y -i media-src/gallery-videos/reel.mp4 -vf scale=-2:1280:flags=lanczos \
 #     -c:v libx264 -b:v 1250k -preset slower -profile:v high -level 4.0 -pix_fmt yuv420p \
 #     -an -pass 1 -passlogfile /tmp/sd -f mp4 /dev/null && \
-#   ffmpeg -y -i media-src/gallery-videos/sirdante-reel.mp4 -vf scale=-2:1280:flags=lanczos \
+#   ffmpeg -y -i media-src/gallery-videos/reel.mp4 -vf scale=-2:1280:flags=lanczos \
 #     -c:v libx264 -b:v 1250k -preset slower -profile:v high -level 4.0 -pix_fmt yuv420p \
 #     -c:a aac -b:a 96k -ac 2 -movflags +faststart -pass 2 -passlogfile /tmp/sd \
-#     public/images/gallery/videos/sirdante-reel.mp4 && \
-#   ffmpeg -y -ss 1 -i public/images/gallery/videos/sirdante-reel.mp4 -frames:v 1 \
+#     public/images/gallery/videos/reel.mp4 && \
+#   ffmpeg -y -ss 1 -i public/images/gallery/videos/reel.mp4 -frames:v 1 \
 #     -vf scale=720:1280 -c:v libwebp -quality 78 \
-#     public/images/gallery/videos/posters/sirdante-reel.webp
+#     public/images/gallery/videos/posters/reel.webp
 set -euo pipefail
 
 SRC_DIR="media-src/gallery-videos"
@@ -51,7 +51,7 @@ mkdir -p "$OUT_DIR" "$POSTER_DIR"
 HIGH_CRF="video2 shakey-video1"
 # Clips with a bespoke encode that this generic pass must not overwrite.
 # (both are 720x1280 portrait — the generic height-720 cap would halve their width)
-SKIP_REENCODE="beachride sirdante-reel"
+SKIP_REENCODE="beachride reel"
 # Cloudflare (Pages and Workers Static Assets) rejects any single asset over
 # 25 MiB, which would silently fail the deploy. Hard-fail here instead.
 MAX_BYTES=26214400  # 25 MiB
