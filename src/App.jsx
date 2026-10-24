@@ -13,6 +13,7 @@ import { Button } from '@/components/ui/button';
 // fallback — so lazy sections would be missing from the SSG HTML. Full-page
 // hydration needs the whole tree loaded anyway.
 import HorseRidingSection from '@/components/HorseRidingSection';
+import ReelSection from '@/components/ReelSection';
 import ServicesSection from '@/components/ServicesSection';
 import HorseGallery from '@/components/HorseGallery';
 import LocationSection from '@/components/LocationSection';
@@ -21,7 +22,6 @@ import AvailableUnitsSection from '@/components/AvailableUnitsSection';
 import GoogleReview from '@/components/GoogleReview';
 import Footer from '@/components/Footer';
 import ContactChoiceModal from '@/components/ContactChoiceModal';
-import IntroVideoModal from '@/components/IntroVideoModal';
 import { WA_MESSAGES } from '@/lib/contact';
 
 const structuredData = [
@@ -275,6 +275,7 @@ function App() {
         <Navigation />
         <HeroSection />
         <div id="main-content"><HorseRidingSection /></div>
+        <ReelSection />
         <ServicesSection />
         <HorseGallery />
         <LocationSection
@@ -294,8 +295,6 @@ function App() {
         <Footer />
         <Toaster />
       </div>
-
-      <IntroVideoModal />
     </>
   );
 }

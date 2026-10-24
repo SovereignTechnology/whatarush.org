@@ -23,7 +23,7 @@ export function shuffle(arr) {
 // (the masters mix .mp4/.MP4/.mov). `heavy: true` marks clips large enough that
 // the gallery shows a poster + click-to-load instead of auto-fetching them.
 export const videos = [
-  { src: `${v}/sirdante-reel.mp4`, poster: `${vp}/sirdante-reel.webp`, heavy: true },
+  { src: `${v}/reel.mp4`, poster: `${vp}/reel.webp`, heavy: true },
   { src: `${v}/beachride.mp4`, poster: `${vp}/beachride.webp`, heavy: true },
   { src: `${v}/video1.mp4`, poster: `${vp}/video1.webp` },
   { src: `${v}/video2.mp4`, poster: `${vp}/video2.webp`, heavy: true },
