@@ -31,7 +31,10 @@ const ReelSection = () => (
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="mx-auto w-full max-w-sm overflow-hidden rounded-2xl bg-black shadow-2xl"
+        // Width = the narrower of the container and what 85% of the viewport
+        // height allows at 9:16, so the player is as tall as fits on screen
+        // (no letterbox bars) and still fills the width on phones.
+        className="mx-auto w-[min(100%,calc(85svh*9/16))] overflow-hidden rounded-2xl bg-black shadow-2xl"
       >
         <video
           src={VIDEO_SRC}
